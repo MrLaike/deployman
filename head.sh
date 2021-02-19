@@ -19,7 +19,6 @@ input () {
 	if [ -z "$1" ]; then text="Введите значение: "
 	else text="Введите $1: "; fi
 
-
 	while read -rp "$text" value; do
 		if [ -z "$value" ]
 		then

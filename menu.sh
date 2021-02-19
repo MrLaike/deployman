@@ -12,7 +12,6 @@ main_menu () {
 		Выберите нужный пункт:\n
 			1. База данных \n
 			2. Файлы проекта \n
-			3. Изменить конфиги \n
 			0. Выход \n
 		"
 
@@ -24,7 +23,7 @@ main_menu () {
 		case $doing in
 			1) $cls; db_menu ;;
 			2) $cls; file_menu ;;
-			3) $cls; config_menu ;;
+		  # 3) $cls; config_menu ;;
 			0) $cls; exit 0 ;;
 			*) $cls; main_menu ;;
 		esac

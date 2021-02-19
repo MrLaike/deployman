@@ -7,7 +7,7 @@ create_backup () {
 	case $DB_TYPE in
 		"mysql")
 			db_user=$( input "имя пользователя" )
-			if mysqldump -u $db_user -p $db_name > "$db_file.sql"; then echo "Бекап успешно создан"
+			if mysqldump -u $db_user -p $db_name > "$db_file.sql"; then echo -e "$GREENБекап успешно создан$NC"
 			else echo -e "$REDОшибка!!$NC"; fi
 			;;
 		"postgre")
@@ -21,8 +21,8 @@ create_backup () {
 
 create_remote_backup () {
 	echo -e "$BOLDСоздание бeкапа по ssh$NC";
-	db_name=$( input "имя базы данных" )
 	db_file=$( input "имя дамп файла" )
+	db_name=$( input "имя базы данных" )
 
 	case $DB_TYPE in
 		"mysql")
