@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+echo -e "Установка необходимых пакетов:\n"
+. ./install-packages.sh
+
+clear
+
+MY_PATH="`dirname \"$0\"`"
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
+export DEPLOYMAN_PATH="$MY_PATH"
+echo $MY_PATH
+
+sudo cp -s $MY_PATH/menu.sh /usr/bin/deployman
